@@ -1,0 +1,86 @@
+<h1 class="mt-4">Products</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">{{ product.id ? 'Product Editing' : 'Product Registration' }}</li>
+</ol>
+
+<div class="container">
+    <form #productForm="ngForm" (ngSubmit)="onSubmit()">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-success" role="alert" *ngIf="success == true">
+                    Product saved/updated successfully!
+                </div>
+
+                <div class="alert alert-danger" role="alert" *ngFor="let erro of errors">
+                    {{ erro }}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>ID:</label>
+                    <input type="text" class="form-control" disabled="true" [(ngModel)]="product.id" name="id">
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input type="text" class="form-control" [(ngModel)]="product.name" name="name">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Price:</label>
+                    <input type="text" class="form-control" [(ngModel)]="product.price" name="price">
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Description:</label>
+                    <input type="text" class="form-control" [(ngModel)]="product.description" name="description">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Category:</label>
+                    <input type="text" class="form-control" [(ngModel)]="product.categories" name="categories">
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-success" *ngIf="!product.id" >
+                    <i class="fa fa-save"></i>
+                    Save Product
+                </button>
+
+                <button type="submit" class="btn btn-primary" *ngIf="product.id" >
+                    <i class="fa fa-sync-alt"></i>
+                    Update Product
+                </button>
+
+                <button type="submit" class="btn btn-danger ml-2" routerLink="/products-list">
+                    <i class="fa fa-arrow-alt-circle-left"></i>
+                    return
+                </button>
+            </div>
+
+        </div>
+    
+    </form>
+</div>
