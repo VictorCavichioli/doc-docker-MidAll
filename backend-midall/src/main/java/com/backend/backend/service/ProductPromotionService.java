@@ -66,13 +66,8 @@ public class ProductPromotionService {
 						: promotion.getTotalCompra(),
 				promotionReceived.getDiscount() != null ? promotionReceived.getDiscount() : promotion.getDiscount());
 
-<<<<<<< Updated upstream
-		finalPromotion.setProducts(promotionReceived.getProducts().get(0) != null ? promotionReceived.getProducts()
-				: promotion.getProducts());
-=======
 		finalPromotion.setProduct(promotionReceived.getProduct().get(0) != null ? promotionReceived.getProduct()
 				: promotion.getProduct());
->>>>>>> Stashed changes
 
 		return productPromotionRepository.save(finalPromotion);
 	}
@@ -103,13 +98,8 @@ public class ProductPromotionService {
 				productPromotionDTO.getQuantidade(), productPromotionDTO.getTotalCompra(),
 				productPromotionDTO.getDiscount());
 
-<<<<<<< Updated upstream
-		productPromotion.getProducts()
-				.addAll(productPromotionDTO.getProducts().stream()
-=======
 		productPromotion.getProduct()
 				.addAll(productPromotionDTO.getProduct().stream()
->>>>>>> Stashed changes
 						.map(productDTO -> new Product(productDTO.getId(), productDTO.getDiscount(),
 								productDTO.getName(), productDTO.getPrice(), productDTO.getDescription()))
 						.collect(Collectors.toList()));

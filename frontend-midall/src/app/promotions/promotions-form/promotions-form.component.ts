@@ -37,11 +37,7 @@ export class PromotionsFormComponent implements OnInit {
         this.p1 =false;
       }
       if(this.receivePromotion == 'TOTAL'){
-<<<<<<< Updated upstream
-        this.productPromotion.product=1;
-=======
         //this.productPromotion.product;
->>>>>>> Stashed changes
         this.p3 =false;
       }
       // if(this.receivePromotion == 'CATEGORY'){

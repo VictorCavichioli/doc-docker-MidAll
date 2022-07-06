@@ -70,7 +70,7 @@
                 <input type="text" class="form-control" [(ngModel)]="productPromotion.productid" name="productid">
               </div>
 
-               <div [value]="n"  *ngFor="let n of productPromotion.product">
+              <div *ngFor="let n of productPromotion.product">
                 <p>{{n.id}}</p>
               </div>            
 

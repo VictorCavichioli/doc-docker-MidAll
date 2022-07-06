@@ -16,27 +16,7 @@ export class ProductPromotionService {
   }
 
   update(id : number, productPromotion : ProductPromotion) : Observable<ProductPromotion>{
-<<<<<<< Updated upstream
-    let obj = {
-      "id" : productPromotion.id,
-      "name" : productPromotion.name,
-      "isActive" : true,
-      "typePromotion" : productPromotion.typePromotion,
-      "receivePromotion" : productPromotion.receivePromotion,
-      "quantidade" : productPromotion.quantidade,
-      "discount" : productPromotion.discount,
-      "products" : [
-          {
-              "id" : productPromotion.product
-          }
-        ]
-    }
-
-    return this.http.put<ProductPromotion>(`http://localhost:8080/product-promotions/${id}`, obj)
-
-=======
     return this.http.put<ProductPromotion>(`http://localhost:8080/product-promotions/${id}`, productPromotion)
->>>>>>> Stashed changes
   }
 
   getAll() : Observable<ProductPromotion[]> {
